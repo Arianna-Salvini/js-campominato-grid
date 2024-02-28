@@ -16,9 +16,15 @@ body {
 }
 
 /* Utility */
+.hidden {
+    display: none;
+}
+
 .active {
     display: block;
 }
+
+
 
 /* Header */
 .header_container {
