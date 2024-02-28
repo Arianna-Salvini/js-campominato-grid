@@ -1,5 +1,5 @@
-:root{
-    --color-dark:#223449;
+:root {
+    --color-dark: #223449;
 }
 
 * {
@@ -13,6 +13,12 @@ body {
     background-color: aquamarine;
     font-family: "Hanken Grotesk", sans-serif;
 }
+
+/* Utility */
+.active {
+    display: block;
+}
+
 /* Header */
 .header_container {
     height: 10%;
@@ -32,20 +38,21 @@ body {
         font-weight: 700;
         font-size: 2.3rem;
     }
-    
+
     .right_side>button {
         padding: 0.2rem 1rem;
         font-size: 0.9rem;
     }
 
 }
+
 /* Main */
 
-#main{
+#main {
     padding: 3rem;
 }
 
-.game_container{
+.game_container {
     width: 1004px;
     margin: auto;
     border: 2px solid var(--color-dark);
@@ -57,20 +64,24 @@ body {
     .cell {
         width: 100px;
         aspect-ratio: 1;
-        border: 1px solid var(--color-dark);}
-    
+        border: 1px solid var(--color-dark);
+    }
+
+    font-size: 1.3rem;
+    line-height: 100px;
+    text-align: center;
 }
 
 /* Footer */
 
-.footer_text{
+.footer_text {
     height: 50px;
     background-color: aliceblue;
     padding: 2rem;
     display: flex;
     align-items: center;
 
-    & a{
+    & a {
         padding: 0.3rem;
     }
 }
