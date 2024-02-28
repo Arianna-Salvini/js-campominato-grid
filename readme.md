@@ -15,7 +15,18 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
         - Al click la cella si colora di azzurro
         - Stampo in console il numero corrispondente alla cella cliccata
 
-![alt text](img/campominato.png)
+TOOLS JS:
+- const/let
+- consol.log
+- get.ElementByID/querySelector
+- addAeventListener
+- function
+- classList
+- .add/.toggle
+
+
+
+![alt text](./assets/img/campominato.pngimg/campominato.png)
 
 # Bonus
 Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
