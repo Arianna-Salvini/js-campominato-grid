@@ -20,10 +20,10 @@ body {
     display: none;
 }
 
-.active {
-    display: block;
+.clicked {
+    color: aliceblue;
+    background-color: darkcyan;
 }
-
 
 
 /* Header */
@@ -56,8 +56,8 @@ body {
 /* Main */
 
 #main {
-    height: calc(100% - 8.6rem);
-    padding: 3rem;
+    height: 100%;
+    padding: 5rem;
     display: flex;
     align-items: center;
 }
@@ -90,6 +90,10 @@ body {
     padding: 2rem;
     display: flex;
     align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 
     & a {
         padding: 0.3rem;
