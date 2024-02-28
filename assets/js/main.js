@@ -8,7 +8,8 @@ gameGrid.classList.add('hidden');
 const btnStart = document.getElementById("start_game");
 // bottone start
 btnStart.addEventListener('click', function () {
-    gameGrid.classList.toggle('hidden');
+    gameGrid.classList.add('hidden');
+
     // Creo la griglia di gioco
     /**
      * Create a grid dinamically with sequential number in it in DOM
@@ -28,8 +29,8 @@ btnStart.addEventListener('click', function () {
             cell.addEventListener('click', function () {
                 cell.classList.toggle('clicked');
                 console.log(cellNumber);
-
-        });
+            });
+            break;
     }
 }
 creatGameGrid(totalCells)
