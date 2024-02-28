@@ -46,11 +46,11 @@ body {
 }
 
 .game_container{
-    width: 1000px;
-    height: calc(100% - 15%);
+    width: 1004px;
     margin: auto;
     border: 2px solid var(--color-dark);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
