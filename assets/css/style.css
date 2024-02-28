@@ -10,6 +10,7 @@
 }
 
 body {
+
     background-color: aquamarine;
     font-family: "Hanken Grotesk", sans-serif;
 }
@@ -21,7 +22,7 @@ body {
 
 /* Header */
 .header_container {
-    height: 10%;
+    height: 5.5 rem;
     background-color: aliceblue;
     padding: 1rem 2rem;
     display: flex;
@@ -36,12 +37,12 @@ body {
 
     & h1 {
         font-weight: 700;
-        font-size: 2.3rem;
+        font-size: 2.5rem;
     }
 
     .right_side>button {
-        padding: 0.2rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.4rem 2rem;
+        font-size: 1rem;
     }
 
 }
@@ -49,7 +50,10 @@ body {
 /* Main */
 
 #main {
+    height: calc(100% - 8.6rem);
     padding: 3rem;
+    display: flex;
+    align-items: center;
 }
 
 .game_container {
@@ -75,7 +79,7 @@ body {
 /* Footer */
 
 .footer_text {
-    height: 50px;
+    height: 3.1rem;
     background-color: aliceblue;
     padding: 2rem;
     display: flex;
