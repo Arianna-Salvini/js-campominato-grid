@@ -15,7 +15,8 @@ btnStart.addEventListener('click', function () {
     gameGrid.classList.add('hidden');
     gameGrid.innerHTML = ''
     createGameGrid(totalCells)
-
+    genrateRandomASteroid()
+    console.log(genrateRandomASteroid()); 
 });
 
 // Creo la griglia di gioco
@@ -39,7 +40,16 @@ function createGameGrid(totalCells) {
             cell.classList.add('clicked');
             console.log(cellNumber);
 
+        // confonto i numeri delle celle coi numeri degli asteroidi
+
+            if (asteroidList.includes(i)) {
+                cell.classList.add('asteroid')
+                cell.textContent = '☄️'
+            }
         });
+
+
+       
 
     }
     return gameGrid
@@ -56,8 +66,5 @@ function genrateRandomASteroid (){
     }
     return asteroidList;
 }
-
-console.log(genrateRandomASteroid()); 
-
 
 
