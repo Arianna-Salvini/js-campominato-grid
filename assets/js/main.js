@@ -41,8 +41,8 @@ btnStart.addEventListener('click', function () {
 // Button restartgame
 
 btnRestart.addEventListener('click', function () {
-    location.reload;
-})
+    location.reload();
+});
 
 // Creo la griglia di gioco
 /**
@@ -57,7 +57,6 @@ function createGameGrid(totalCells) {
         cell.classList.add('cell');
         cell.textContent = cellNumber;
         gameGrid.appendChild(cell);
-
 
         cell.addEventListener('click', function () {
             cell.classList.add('clicked');
@@ -75,10 +74,10 @@ function createGameGrid(totalCells) {
             if (asteroidList.includes(i)) {
                 cell.classList.add('asteroid');
                 cell.textContent = '☄️';
-                score --
+                score--
                 isWin(false);
             }
-            counterScore() 
+            counterScore()
         });
     }
     return gameGrid
@@ -112,6 +111,6 @@ function isWin(winner) {
 // Funzione contattore
 
 function counterScore() {
-    score ++
-    scoreCounter.innerText= String(score)
+    score++
+    scoreCounter.innerText = String(score)
 }
