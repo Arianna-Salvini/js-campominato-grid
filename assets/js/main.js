@@ -39,24 +39,25 @@ function createGameGrid(totalCells) {
             cell.classList.add('clicked');
             console.log(cellNumber);
 
-            // Genero 16 numeri randomici per gli asteroi e li push nel suo array
-            while (asteroidList.length < maxAsteroidNumb) {
-                const asteroids = Math.floor(Math.random() * totalCells) + 1;
-                if (!asteroidList.includes(asteroids)) {
-                    asteroidList.push(asteroids);
-                }
-            }
         });
+
     }
-
-
-    console.log(asteroidList);
     return gameGrid
 }
 
 
+function genrateRandomASteroid (){
+     // Genero 16 numeri randomici per gli asteroi e li push nel suo array
+     while (asteroidList.length < maxAsteroidNumb) {
+        const asteroids = Math.floor(Math.random() * totalCells) + 1;
+        if (!asteroidList.includes(asteroids)) {
+            asteroidList.push(asteroids);
+        }
+    }
+    return asteroidList;
+}
 
-
+console.log(genrateRandomASteroid()); 
 
 
 
