@@ -9,13 +9,16 @@ const btnStart = document.getElementById("start_game");
 // bottone start
 btnStart.addEventListener('click', function () {
     gameGrid.classList.add('hidden');
+    gameGrid.innerHTML = ''
+    createGameGrid(totalCells)
+
 
     // Creo la griglia di gioco
     /**
      * Create a grid dinamically with sequential number in it in DOM
      * @param {Number} 
      */
-    function creatGameGrid(totalCells) {
+    function createGameGrid(totalCells) {
         // Creo le celle
         // console.log(gameGrid);
         for (let i = 1; i <= totalCells; i++) {
@@ -27,11 +30,10 @@ btnStart.addEventListener('click', function () {
             gameGrid.appendChild(cell)
 
             cell.addEventListener('click', function () {
-                cell.classList.toggle('clicked');
+                cell.classList.add('clicked');
                 console.log(cellNumber);
             });
-            break;
+        }
+        return 
     }
-}
-creatGameGrid(totalCells)
 });
