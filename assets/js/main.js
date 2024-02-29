@@ -1,8 +1,5 @@
 console.log('Start the game');
 /// Usefull Variables///
-
-const totalCells = 100;
-
 const gameGrid = document.querySelector('.game_container');
 gameGrid.classList.add('hidden');
 
@@ -15,7 +12,6 @@ const maxAsteroidNumb = 16;
 const maxFreeCell = totalCells - maxAsteroidNumb;
 const cellClicked = [];
 
-
 // add const for end game pages
 const endgameWinner = document.getElementById('winner_page')
 const endgameLoser = document.getElementById('loser_page')
@@ -26,6 +22,7 @@ const updateScore = document.getElementById('score')
 //add const for refresh button
 const btnRestart = document.getElementById('btn_refresh')
 console.log(btnRestart);
+
 // add const for score
 let score = 0
 let scoreCounter = document.getElementById('score')
@@ -66,11 +63,6 @@ function createGameGrid(totalCells) {
             // add clicked cell into array
             if (!cellClicked.includes(i)) {
                 cellClicked.push(i);
-                
-                // score.push(updateScore)                           NON FUNZIONA ARIANNA!
-                // console.log(`your score ${score} points`);
-                // scoreUpdating.insertAdjacentHTML = ('beforeend', updateScore);
-                
             }
             // confonto i numeri delle celle coi numeri degli asteroidi
             // add win condition
@@ -120,5 +112,4 @@ function isWin(winner) {
 function counterScore() {
     score ++
     scoreCounter.innerText= String(score)
-
 }
