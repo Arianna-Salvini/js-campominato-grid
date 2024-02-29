@@ -1,4 +1,5 @@
 console.log('Start the game');
+/// Usefull Variables///
 
 const totalCells = 100;
 
@@ -13,8 +14,18 @@ const maxAsteroidNumb = 16;
 // add a constant for maximum cells clickable excluding astroid cells --- condition for win
 const maxFreeCell = totalCells - maxAsteroidNumb;
 const cellClicked = [];
-// console.log(maxFreeCell);
-// bottone start
+
+
+// add const for end game pages
+const endgameWinner = document.getElementById('winner_page')
+const endgameLoser = document.getElementById('loser_page')
+
+
+//add const for refresh button
+const btnRestart = document.querySelector('.btn_restart')
+
+
+// Button start the game
 btnStart.addEventListener('click', function () {
     gameGrid.classList.add('hidden');
     gameGrid.innerHTML = '';
@@ -22,6 +33,12 @@ btnStart.addEventListener('click', function () {
     genrateRandomASteroid();
     console.log(genrateRandomASteroid());
 });
+
+
+btnRestart.addEventListener('click', function(){
+    location.reload();
+});
+
 
 // Creo la griglia di gioco
 /**
@@ -60,8 +77,6 @@ function createGameGrid(totalCells) {
                 isWin(false);
             }
 
-
-
         });
     }
     return gameGrid
@@ -82,10 +97,10 @@ function genrateRandomASteroid() {
 
 function isWin(winner) {
     if (winner === true) {
-        return console.log('You win');
+       console.log('You win');
+       return endgameWinner.classList.remove('hidden')
     } else {
-        return console.log('You lose');
+        console.log('You lose');
+        return endgameLoser.classList.remove('hidden')
     }
 }
-// console.log(isWin(true))
-// console.log(isWin(false))
