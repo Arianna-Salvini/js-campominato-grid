@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campominato</title>
+    <title>Spacesweeper</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +28,31 @@
     </div>
     <!-- /#header -->
     <main id="main">
-        <h2>Avoid asteroids ☄️</h2>
+        <h2 class="main_title">Avoid asteroids ☄️</h2>
+
+        <!-- Winn game page -->
+        <div class="hidden" id="winner_page">
+            <div class="winner end_game hidden">
+                <h2>YOU WIN!</h2>
+                <h3>Your spaceship made the Kessel Rote in less than 12 parsec!</h3>
+                <button class="btn_restart" type="reset">Restart</button>
+            </div>
+
+        </div>
+
+        <!-- Lost game page -->
+        <div class="hidden" id="loser_page">
+            <div class="loser end_game">
+                <h2>YOU LOSE</h2>
+                <h3>You were hit by an asteroid!</h3>
+                <button class="btn_restart" type="reset">Restart</button>
+            </div>
+        </div>
+
+
+        <!-- Game page -->
         <div class="game_container">
             <!-- cells -->
-            
         </div>
     </main>
     <!-- /#main -->
@@ -40,7 +61,7 @@
             Made with &hearts; by
             <a
                 href="https://boolean.careers/?utm_source=google&utm_campaign=it_search_brand&utm_medium=cpc&utm_content=boolean&utm_term=boolean&gad_source=1&gclid=CjwKCAiA0PuuBhBsEiwAS7fsNfRfi4EvUBJF4WTiTi5R1Psqw0MnQpkZi41NZPHFa0DgEYilIXyuhBoC6VkQAvD_BwE">
-                Boolean 
+                Boolean
             </a>
         </div>
     </footer>
