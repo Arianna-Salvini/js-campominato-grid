@@ -20,10 +20,15 @@ const cellClicked = [];
 const endgameWinner = document.getElementById('winner_page')
 const endgameLoser = document.getElementById('loser_page')
 
+// Add score counter
+const updateScore = document.getElementById('score')
 
 //add const for refresh button
-const btnRestart = document.querySelector('.btn_restart')
-
+const btnRestart = document.getElementById('btn_refresh')
+console.log(btnRestart);
+// add const for score
+let score = 0
+let scoreCounter = document.getElementById('score')
 
 // Button start the game
 btnStart.addEventListener('click', function () {
@@ -34,11 +39,11 @@ btnStart.addEventListener('click', function () {
     console.log(genrateRandomASteroid());
 });
 
+// Button restartgame
 
-btnRestart.addEventListener('click', function(){
-    location.reload();
-});
-
+btnRestart.addEventListener('click', function () {
+    location.reload;
+})
 
 // Creo la griglia di gioco
 /**
@@ -47,24 +52,26 @@ btnRestart.addEventListener('click', function(){
  */
 function createGameGrid(totalCells) {
     // Creo le celle
-    // console.log(gameGrid);
-    let cell;
     for (let i = 1; i <= totalCells; i++) {
         let cellNumber = i;
-        // const markUpCell = `<div class="cell"> ${cellNumber}</div>`;
         const cell = document.createElement('div');
         cell.classList.add('cell');
         cell.textContent = cellNumber;
         gameGrid.appendChild(cell);
 
+
         cell.addEventListener('click', function () {
             cell.classList.add('clicked');
-            // console.log(cellNumber);
+
             // add clicked cell into array
             if (!cellClicked.includes(i)) {
                 cellClicked.push(i);
+                
+                // score.push(updateScore)                           NON FUNZIONA ARIANNA!
+                // console.log(`your score ${score} points`);
+                // scoreUpdating.insertAdjacentHTML = ('beforeend', updateScore);
+                
             }
-            console.log(cellClicked);
             // confonto i numeri delle celle coi numeri degli asteroidi
             // add win condition
             if (cellClicked.length === maxFreeCell) {
@@ -74,13 +81,16 @@ function createGameGrid(totalCells) {
             if (asteroidList.includes(i)) {
                 cell.classList.add('asteroid');
                 cell.textContent = '☄️';
+                score --
                 isWin(false);
             }
-
+            counterScore() 
         });
     }
     return gameGrid
 }
+
+// Funzione pre la generazione random di numeri da considerare perdenti
 
 function genrateRandomASteroid() {
     // Genero 16 numeri randomici per gli asteroi e li push nel suo array
@@ -93,14 +103,22 @@ function genrateRandomASteroid() {
     return asteroidList;
 }
 
-// condition to win or loose the game and stop it
+//Function for condition to win or loose the game and stop it
 
 function isWin(winner) {
     if (winner === true) {
-       console.log('You win');
-       return endgameWinner.classList.remove('hidden')
+        console.log('You win');
+        return endgameWinner.classList.remove('hidden')
     } else {
         console.log('You lose');
         return endgameLoser.classList.remove('hidden')
     }
+}
+
+// Funzione contattore
+
+function counterScore() {
+    score ++
+    scoreCounter.innerText= String(score)
+
 }

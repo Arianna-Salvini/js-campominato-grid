@@ -38,13 +38,18 @@ body {
     background-color: aliceblue;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+
 
     .left_side {
-        display: flex;
-        align-items: center;
         gap: 1.5rem;
+    }
+
+    .right_side{
+        justify-content: end;
+    }
+    
+    #score{
+        justify-content: center;
     }
 
     & > h1 {
@@ -57,6 +62,14 @@ body {
         font-size: 1rem;
     }
 
+}
+
+.left_side,
+.right_side,
+#score {
+    width: calc(100% / 3);
+    display: flex;
+    align-items: center;
 }
 
 /* Main */
@@ -72,7 +85,6 @@ body {
 
     .main_title {
         font-size: 3rem;
-        padding-bottom: 5rem;
     }
 }
 
@@ -88,12 +100,12 @@ body {
         width: calc(100% / 10);
         aspect-ratio: 1;
         border: 1px solid var(--color-dark);
+        font-size: 1.5rem;
+        line-height: 100px;
+        text-align: center;
+    }
     }
 
-    font-size: 1.3rem;
-    line-height: 100px;
-    text-align: center;
-}
 
 /* Footer */
 
@@ -159,6 +171,9 @@ body {
     }
 }
 
+#score {
+    font-size: 3rem;
+}
 /* restart Button */
 .btn_restart {
     font-size: 1.5rem;

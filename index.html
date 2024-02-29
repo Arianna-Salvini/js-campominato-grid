@@ -22,6 +22,7 @@
             </div>
             <h1>Spacesweeper 👾</h1>
         </div>
+        <div id="score">00</div>
         <div class="right_side">
             <button type="submit" id="start_game">Play</button>
         </div>
@@ -35,7 +36,8 @@
             <div class="winner end_game hidden">
                 <h2>YOU WIN!</h2>
                 <h3>Your spaceship made the Kessel Rote in less than 12 parsec!</h3>
-                <button class="btn_restart" type="reset">Restart</button>
+                <div class="score"></div>
+                <button class="btn_restart" type="button">Restart</button>
             </div>
 
         </div>
@@ -45,7 +47,7 @@
             <div class="loser end_game">
                 <h2>YOU LOSE</h2>
                 <h3>You were hit by an asteroid!</h3>
-                <button class="btn_restart" type="reset">Restart</button>
+                <button id="btn_refresh" class="btn_restart">Restart</button>
             </div>
         </div>
 
