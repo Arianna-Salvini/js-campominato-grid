@@ -1,5 +1,7 @@
 console.log('Start the game');
 /// Usefull Variables///
+let totalCells = 100
+
 const gameGrid = document.querySelector('.game_container');
 gameGrid.classList.add('hidden');
 
