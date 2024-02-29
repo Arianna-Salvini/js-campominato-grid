@@ -1,11 +1,12 @@
 console.log('Start the game');
 /// Usefull Variables///
-let totalCells = 100
+let totalCells = 100;
 
 const gameGrid = document.querySelector('.game_container');
 gameGrid.classList.add('hidden');
 
 const btnStart = document.getElementById("start_game");
+
 // add const for maximum number of asteroid and an array for the number cell where asteroids is
 const asteroidList = [];
 const maxAsteroidNumb = 16;
@@ -15,14 +16,14 @@ const maxFreeCell = totalCells - maxAsteroidNumb;
 const cellClicked = [];
 
 // add const for end game pages
-const endgameWinner = document.getElementById('winner_page')
-const endgameLoser = document.getElementById('loser_page')
+const endgameWinner = document.getElementById('winner_page');
+const endgameLoser = document.getElementById('loser_page');
 
 // Add score counter
-const updateScore = document.getElementById('score')
+const updateScore = document.getElementById('score');
 
 //add const for refresh button
-const btnRestart = document.getElementById('btn_refresh')
+const btnRestart = document.getElementById('btn_refresh');
 console.log(btnRestart);
 
 // add const for score
@@ -39,7 +40,6 @@ btnStart.addEventListener('click', function () {
 });
 
 // Button restartgame
-
 btnRestart.addEventListener('click', function () {
     location.reload();
 });
@@ -68,7 +68,7 @@ function createGameGrid(totalCells) {
             // confonto i numeri delle celle coi numeri degli asteroidi
             // add win condition
             if (cellClicked.length === maxFreeCell) {
-                isWin(true)
+                isWin(true);
             }
 
             if (asteroidList.includes(i)) {
@@ -77,14 +77,13 @@ function createGameGrid(totalCells) {
                 score--
                 isWin(false);
             }
-            counterScore()
+            counterScore();
         });
-    }
-    return gameGrid
-}
+    };
+    return gameGrid;
+};
 
 // Funzione pre la generazione random di numeri da considerare perdenti
-
 function genrateRandomASteroid() {
     // Genero 16 numeri randomici per gli asteroi e li push nel suo array
     while (asteroidList.length < maxAsteroidNumb) {
@@ -94,23 +93,21 @@ function genrateRandomASteroid() {
         }
     }
     return asteroidList;
-}
+};
 
 //Function for condition to win or loose the game and stop it
-
 function isWin(winner) {
     if (winner === true) {
         console.log('You win');
-        return endgameWinner.classList.remove('hidden')
+        return endgameWinner.classList.remove('hidden');
     } else {
         console.log('You lose');
-        return endgameLoser.classList.remove('hidden')
+        return endgameLoser.classList.remove('hidden');
     }
-}
+};
 
 // Funzione contattore
-
 function counterScore() {
     score++
-    scoreCounter.innerText = String(score)
-}
+    scoreCounter.innerText = String(score);
+};
