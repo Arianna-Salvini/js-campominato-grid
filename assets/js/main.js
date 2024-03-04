@@ -9,7 +9,7 @@ const btnStart = document.getElementById("start_game");
 
 // add const for maximum number of asteroid and an array for the number cell where asteroids is
 const asteroidList = [];
-const maxAsteroidNumb = 2;
+const maxAsteroidNumb = 16;
 
 // add a constant for maximum cells clickable excluding astroid cells --- condition for win
 const maxFreeCell = totalCells - maxAsteroidNumb;
