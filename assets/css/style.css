@@ -1,6 +1,6 @@
 :root {
     --color-dark: #223449;
-    --gb-grid: rgb(64, 35, 252);
+    --gb-grid: rgb(8, 0, 57);
 }
 
 * {
@@ -76,7 +76,7 @@ body {
 
 #main {
     font-family: "Poller One", serif;
-    height: calc(100% - 300px);
+    height: calc(100vh - 8.6rem);
     padding: 5rem;
     display: flex;
     flex-direction: column;
@@ -86,11 +86,8 @@ body {
 
     .main_title {
         font-size: 3rem;
-        border: 1px whitesmoke;
-        text-shadow: -1px 1px 0 #ffffff,
-            1px 1px 0 #ffffff,
-            1px -1px 0 #ffffff,
-            -1px -1px 0 #ffffff;
+       color: aliceblue;
+        text-shadow: #FC0 5px 0 20px;
         margin-bottom: 1.5rem;
     }
 }
@@ -147,6 +144,7 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
+    z-index: -1;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -9,7 +9,7 @@ const btnStart = document.getElementById("start_game");
 
 // add const for maximum number of asteroid and an array for the number cell where asteroids is
 const asteroidList = [];
-const maxAsteroidNumb = 16;
+const maxAsteroidNumb = 2;
 
 // add a constant for maximum cells clickable excluding astroid cells --- condition for win
 const maxFreeCell = totalCells - maxAsteroidNumb;
@@ -23,8 +23,8 @@ const endgameLoser = document.getElementById('loser_page');
 const updateScore = document.getElementById('score');
 
 //add const for refresh button
-const btnRestart = document.getElementById('btn_refresh');
-console.log(btnRestart);
+const btnRestartLose = document.getElementById('btn_refresh_lose');
+const btnRestartWin = document.getElementById('btn_refresh_win');
 
 // add const for score
 let score = 0
@@ -39,8 +39,13 @@ btnStart.addEventListener('click', function () {
     console.log(genrateRandomASteroid());
 });
 
-// Button restartgame
-btnRestart.addEventListener('click', function () {
+// Button restartgame if lose
+btnRestartLose.addEventListener('click', function () {
+    location.reload();
+});
+
+// Button restartgame if win
+btnRestartWin.addEventListener('click', function () {
     location.reload();
 });
 
