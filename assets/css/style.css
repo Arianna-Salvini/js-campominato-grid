@@ -12,7 +12,7 @@
 
 body {
     background-color: var(--gb-grid);
-   max-height: 1000px;
+    max-height: 1000px;
 }
 
 /* Utility */
@@ -44,15 +44,15 @@ body {
         gap: 1.5rem;
     }
 
-    .right_side{
+    .right_side {
         justify-content: end;
     }
-    
-    #score{
+
+    #score {
         justify-content: center;
     }
 
-    & > h1 {
+    &>h1 {
         font-weight: 700;
         font-size: 2.5rem;
     }
@@ -88,9 +88,9 @@ body {
         font-size: 3rem;
         border: 1px whitesmoke;
         text-shadow: -1px 1px 0 #ffffff,
-        1px 1px 0 #ffffff,
-        1px -1px 0 #ffffff,
-        -1px -1px 0 #ffffff;
+            1px 1px 0 #ffffff,
+            1px -1px 0 #ffffff,
+            -1px -1px 0 #ffffff;
         margin-bottom: 1.5rem;
     }
 }
@@ -116,7 +116,7 @@ body {
         align-items: center;
 
     }
-    }
+}
 
 
 /* Footer */
@@ -139,9 +139,9 @@ body {
 
 /* Page for end game */
 
-.end_game{
+.end_game {
 
-    height: calc(100% + 300px);
+    height: 100vh;
     position: absolute;
     top: 0px;
     bottom: 0;
@@ -151,51 +151,114 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
 
-    & > h2 {
+    &>h2 {
         font-size: 5rem;
         text-shadow: 3px 3px 8px #223449;
         padding: 0;
+        color: rgb(248, 255, 47);
+        text-shadow: #FC0 1px 0 10px;
     }
 
-    & > h3 {
+    &>h3 {
         padding: 5rem;
         font-size: 2rem;
+        color: white;
     }
 }
+
+
+/* Winner */
+@keyframes bg_win {
+    
+    0%,100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+  }
 
 .winner {
     background-image: url(../img/bg-win.jpg);
     background-size: cover;
-
-
-    & > h2 {
-        color: rgb(248, 255, 47);
-        text-shadow: -1px 1px 0 var(--color-dark),
-        1px 1px 0 var(--color-dark),
-        1px -1px 0 var(--color-dark),
-        -1px -1px 0 var(--color-dark);
-    }
-
-    & > h3 {
-        color: white;
-    }
-
+    animation: bg_win 10s linear;
 }
 
-/* Page for looser */
+/* Loser*/
+@keyframes loser_bg {
+
+    0%,
+    100% {
+        background-color: darkred;
+    }
+
+    50% {
+        background-color: rgb(185, 0, 0);
+    }
+}
+
+@keyframes tilt {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
 
 .loser {
-    background-color: rgba(255, 127, 80, 0.5);
+    background-color: red;
+    animation: loser_bg 8s infinite;
 
-    & > h2 {
-        color: red;
+    &> h2{
+        animation: tilt 5s infinite;
     }
 }
 
 #score {
     font-size: 3rem;
 }
+
 /* restart Button */
 .btn_restart {
     font-size: 1.5rem;
