@@ -1,5 +1,6 @@
 :root {
     --color-dark: #223449;
+    --gb-grid: rgb(64, 35, 252);
 }
 
 * {
@@ -10,10 +11,8 @@
 }
 
 body {
-
-    background-color: aquamarine;
-    font-family: "Hanken Grotesk", sans-serif;
-    height: 100vh;
+    background-color: var(--gb-grid);
+   max-height: 1000px;
 }
 
 /* Utility */
@@ -22,8 +21,8 @@ body {
 }
 
 .clicked {
-    color: aliceblue;
-    background-color: darkcyan;
+    color: var(--color-dark);
+    background-color: cornflowerblue;
 }
 
 .asteroid {
@@ -38,6 +37,7 @@ body {
     background-color: aliceblue;
     padding: 1rem 2rem;
     display: flex;
+    font-family: "Hanken Grotesk", sans-serif;
 
 
     .left_side {
@@ -75,7 +75,8 @@ body {
 /* Main */
 
 #main {
-    height: 100%;
+    font-family: "Poller One", serif;
+    height: calc(100% - 300px);
     padding: 5rem;
     display: flex;
     flex-direction: column;
@@ -85,24 +86,35 @@ body {
 
     .main_title {
         font-size: 3rem;
+        border: 1px whitesmoke;
+        text-shadow: -1px 1px 0 #ffffff,
+        1px 1px 0 #ffffff,
+        1px -1px 0 #ffffff,
+        -1px -1px 0 #ffffff;
+        margin-bottom: 1.5rem;
     }
 }
 
 .game_container {
-    width: 1004px;
+    width: 804px;
+    height: calc(100% - 100px);
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding-bottom: 100px;
 
     .cell {
+        color: #ffffff;
         width: calc(100% / 10);
-        aspect-ratio: 1;
-        border: 1px solid var(--color-dark);
+        aspect-ratio: 1/1;
+        border: 1px solid rgba(255, 255, 255, 0.543);
         font-size: 1.5rem;
-        line-height: 100px;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
     }
     }
 
@@ -129,9 +141,9 @@ body {
 
 .end_game{
 
-    height: 100%;
+    height: calc(100% + 300px);
     position: absolute;
-    top: 0;
+    top: 0px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -153,10 +165,20 @@ body {
 }
 
 .winner {
-    background-color: rgba(0, 255, 255, 0.5);
+    background-image: url(../img/bg-win.jpg);
+    background-size: cover;
+
 
     & > h2 {
-        color: greenyellow;
+        color: rgb(248, 255, 47);
+        text-shadow: -1px 1px 0 var(--color-dark),
+        1px 1px 0 var(--color-dark),
+        1px -1px 0 var(--color-dark),
+        -1px -1px 0 var(--color-dark);
+    }
+
+    & > h3 {
+        color: white;
     }
 
 }
