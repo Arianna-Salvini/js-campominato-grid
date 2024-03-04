@@ -69,6 +69,7 @@ function createGameGrid(totalCells) {
             // add clicked cell into array
             if (!cellClicked.includes(i)) {
                 cellClicked.push(i);
+                counterScore();
             }
             // confonto i numeri delle celle coi numeri degli asteroidi
             // add win condition
@@ -82,7 +83,7 @@ function createGameGrid(totalCells) {
                 score--
                 isWin(false);
             }
-            counterScore();
+            
         });
     };
     return gameGrid;
