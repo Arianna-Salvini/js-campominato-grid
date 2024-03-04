@@ -79,30 +79,31 @@ body {
 #main {
     font-family: "Poller One", serif;
     height: calc(100vh - 8.6rem);
-    padding: 5rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 0;
+    overflow-y: auto;
 
     .main_title {
         font-size: 3rem;
-       color: aliceblue;
+        color: aliceblue;
         text-shadow: #FC0 5px 0 20px;
         margin-bottom: 1.5rem;
     }
 }
 
 .game_container {
-    width: 804px;
+    width: 604px;
     height: calc(100% - 100px);
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-bottom: 100px;
     z-index: 0;
 
     .cell {
@@ -110,7 +111,7 @@ body {
         width: calc(100% / 10);
         aspect-ratio: 1/1;
         border: 1px solid rgba(255, 255, 255, 0.543);
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -132,6 +133,7 @@ body {
     bottom: 0;
     width: 100%;
     z-index: 2;
+
     & a {
         padding: 0.3rem;
     }
@@ -172,14 +174,16 @@ body {
 
 /* Winner */
 @keyframes bg_win {
-    
-    0%,100% {
-      transform: scale(1);
+
+    0%,
+    100% {
+        transform: scale(1);
     }
+
     50% {
-      transform: scale(1.15);
+        transform: scale(1.15);
     }
-  }
+}
 
 .winner {
     background-image: url(../img/bg-win.jpg);
@@ -251,7 +255,7 @@ body {
     background-color: red;
     animation: loser_bg 8s infinite;
 
-    &> h2{
+    &>h2 {
         animation: tilt 5s infinite;
     }
 }
