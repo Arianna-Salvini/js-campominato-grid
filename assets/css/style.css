@@ -38,6 +38,8 @@ body {
     padding: 1rem 2rem;
     display: flex;
     font-family: "Hanken Grotesk", sans-serif;
+    position: relative;
+    z-index: 2;
 
 
     .left_side {
@@ -101,6 +103,7 @@ body {
     justify-content: center;
     align-items: center;
     padding-bottom: 100px;
+    z-index: 0;
 
     .cell {
         color: #ffffff;
@@ -128,7 +131,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-
+    z-index: 2;
     & a {
         padding: 0.3rem;
     }
@@ -144,7 +147,7 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: -1;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
